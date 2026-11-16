@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Palette dell'app (formato HSL, come vuole shadcn/ui).
+  L'app è solo dark: sfondo #0A0A0A, bordi #1A1A1A.
+*/
+@layer base {
+  :root {
+    --background: 0 0% 4%;          /* #0A0A0A */
+    --foreground: 0 0% 96%;
+    --card: 0 0% 6%;                /* #0F0F0F */
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 10%;             /* #1A1A1A */
+    --input: 0 0% 14%;
+    --ring: 0 0% 40%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    background: hsl(0 0% 100% / 0.15);
+  }
+}
+
+/* Scrollbar discreta, in stile Arc/Linear */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border-radius: 999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

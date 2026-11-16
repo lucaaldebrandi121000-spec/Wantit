@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Wantit",
+  "version": "1.0.0",
+  "description": "Salva il prodotto che stai guardando nella tua wishlist Wantit.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Salva su Wantit"
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+W" },
+      "description": "Salva la pagina corrente su Wantit"
+    }
+  }
+}
